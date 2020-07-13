@@ -3,6 +3,7 @@ import MEDIA from 'helpers/mediaTemplates';
 
 export const Text = styled.span`
   display: block;
+  line-height: 1.5;
   color: ${({ color }) => () => {
     switch (color) {
       case 'grey':
