@@ -21,7 +21,7 @@ const configuration = {
   developerName: null,
   developerURL: null,
   dir: 'auto',
-  lang: 'en-US',
+  lang: 'en-AU',
   background: backgroundColor,
   theme_color: themeColor,
   display: 'standalone',
