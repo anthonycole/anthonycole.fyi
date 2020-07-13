@@ -3,15 +3,28 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Head from 'components/head';
 import Header from 'components/header';
+import Footer from 'components/footer';
+
 import GlobalStyle from 'global.css.js';
 
+import { LayoutContainer } from './layout.css.js';
+
 const Layout = ({ data, children }) => (
-  <div>
+  <React.Fragment>
+    <LayoutContainer>
     <GlobalStyle />
     <Head />
     <Header title={data.site.siteMetadata.siteTitle} />
     {children}
-  </div>
+    <Footer>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.footerJson.content.childMarkdownRemark.html,
+        }}
+      />
+    </Footer>
+    </LayoutContainer>
+  </React.Fragment>
 );
 
 Layout.propTypes = {
@@ -26,6 +39,13 @@ const LayoutWithQuery = props => (
         site {
           siteMetadata {
             siteTitle
+          }
+        }
+        footerJson {
+          content {
+            childMarkdownRemark {
+              html
+            }
           }
         }
       }

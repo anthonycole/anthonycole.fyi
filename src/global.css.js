@@ -48,6 +48,11 @@ export default createGlobalStyle`
     font-variant-numeric: proportional-nums;
   }
 
+  html, body, #___gatsby, #___gatsby > div {
+    width: 100%
+    height: 100%
+  }
+
   ol, ul {
     list-style: none;
   }

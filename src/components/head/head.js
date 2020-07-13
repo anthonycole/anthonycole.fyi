@@ -45,7 +45,6 @@ const Head = ({
 
     <meta content="website" property="og:type" />
     <meta content={siteTitle} property="og:site_name" />
-    <meta content={social.fbAppId} property="fb:app_id" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content={`@${social.twitter}`} name="twitter:site" />
     <meta content={`@${social.twitter}`} name="twitter:creator" />
@@ -54,13 +53,13 @@ const Head = ({
     <meta content={canonical} name="twitter:url" />
     <link rel="canonical" href={canonical} />
 
-    <meta content={imageUrl || `${siteUrl}/social.png`} property="og:image" />
+    <meta content={imageUrl || `${siteUrl}/social.jpeg`} property="og:image" />
     <meta content="1024" property="og:image:width" />
     <meta content="512" property="og:image:height" />
-    <meta content={imageUrl || `${siteUrl}/social.png`} name="twitter:image" />
+    <meta content={imageUrl || `${siteUrl}/social.jpeg`} name="twitter:image" />
     <meta content="1024" name="twitter:image:width" />
     <meta content="512" name="twitter:image:height" />
-    <meta content={imageUrl || `${siteUrl}/social.png`} property="og:image" />
+    <meta content={imageUrl || `${siteUrl}/social.jpeg`} property="og:image" />
     <meta content="1024" property="og:image:width" />
     <meta content="512" property="og:image:height" />
 
@@ -192,7 +191,6 @@ const HeadWithQuery = props => (
             themeColor
             social {
               twitter
-              fbAppId
             }
           }
         }

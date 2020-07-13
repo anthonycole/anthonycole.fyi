@@ -2,31 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Box from 'components/box';
-import Title from 'components/title';
-import Gallery from 'components/gallery';
-import IOExample from 'components/io-example';
-import Modal from 'containers/modal';
+import Heading from 'components/heading';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <Layout>
     <Box>
-      <Title as="h2" size="large">
-        {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
-      </Title>
-      <Modal>
-        <video
-          src="https://i.imgur.com/gzFqNSW.mp4"
-          playsInline
-          loop
-          autoPlay
-          muted
-        />
-      </Modal>
+      <Heading as="h2" size="large">
+        {data.homeJson.intro.childMarkdownRemark.rawMarkdownBody}
+      </Heading>
     </Box>
-    <Gallery items={data.homeJson.gallery} />
-    <div style={{ height: '50vh' }} />
-    <IOExample />
+    <Box>
+      <Heading as="h3" size="medium" color="grey">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.homeJson.subtext.childMarkdownRemark.html,
+          }}
+        />
+      </Heading>
+    </Box>
   </Layout>
 );
 
@@ -39,22 +33,16 @@ export default Index;
 export const query = graphql`
   query HomepageQuery {
     homeJson {
-      title
-      content {
+      intro {
         childMarkdownRemark {
           html
           rawMarkdownBody
         }
       }
-      gallery {
-        title
-        copy
-        image {
-          childImageSharp {
-            fluid(maxHeight: 500, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+      subtext {
+        childMarkdownRemark {
+          html
+          rawMarkdownBody
         }
       }
     }

@@ -8,8 +8,18 @@ class Transition extends PureComponent {
     const { children, location } = this.props;
 
     const RoutesContainer = posed.div({
-      enter: { opacity: 1, delay: timeout, delayChildren: timeout },
-      exit: { opacity: 0 },
+      enter: {
+        opacity: 1,
+        delay: timeout,
+        delayChildren: timeout,
+        width: '100%',
+        height: '100%',
+      },
+      exit: {
+        opacity: 0,
+        width: '100%',
+        height: '100%',
+      },
     });
 
     // To enable page transitions on mount / initial load,
