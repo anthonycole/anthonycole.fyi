@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import posed from 'react-pose';
 import { Container } from './header.css';
-import Heading from 'components/heading';
 import Nav from 'components/header/nav';
 
 // Example of a component-specific page transition

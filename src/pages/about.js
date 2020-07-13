@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from 'components/layout';
-import Heading from 'components/Heading';
+import Heading from 'components/heading';
 import Box from 'components/box';
 import ContentBox from 'components/content-box';
 import Head from 'components/head';
