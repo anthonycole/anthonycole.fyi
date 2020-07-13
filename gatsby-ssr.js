@@ -9,11 +9,11 @@ export const replaceRenderer = ({
   setHeadComponents,
 }) => {
   // React Context in SSR/build
-  replaceBodyHTMLString(renderToString({ bodyComponent }));
+  replaceBodyHTMLString(renderToString(bodyComponent));
 
   // Add styled-components in SSR/build
   const sheet = new ServerStyleSheet();
-  const bodyHTML = renderToString(sheet.collectStyles({ bodyComponent }));
+  const bodyHTML = renderToString(sheet.collectStyles(bodyComponent));
   const styleElement = sheet.getStyleElement();
   setHeadComponents(styleElement);
 };
