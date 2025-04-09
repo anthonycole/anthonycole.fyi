@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🌟 anthonycole.fyi
 
-## Getting Started
+### Background
+When I built this site I wanted to be intentional with my design, I prioritised building a content-focused, simple platform that prioritizes simplicity, performance, and maintainability. The site was built with React, Next, and Tailwind and uses markdown for content management. I've also set up [commitlint](https://commitlint.js.org/) and ESLint.
 
-First, run the development server:
+## 🛠️ Technology Choices
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### ⚛️ Next.js (App Router)
+
+Next.js was chosen for several reasons:
+
+- **🚀 Server Components**: Leveraging React Server Components for improved performance and SEO
+- **🗂️ App Router**: Using the modern file-based routing system for intuitive organization
+- **⚡ Built-in Optimizations**: Image optimization, code splitting, and other performance features
+- **📝 TypeScript Support**: Strong typing for better developer experience and code quality
+
+### 🎨 Tailwind CSS 4
+
+The latest version of Tailwind CSS was selected for styling because of the following:
+
+- **🧩 Utility-First Approach**: Rapid development without leaving HTML
+- **🪶 Zero Runtime**: No CSS-in-JS performance overhead
+- **🔧 Highly Customizable**: Easy to maintain a consistent design system
+- **📦 Small Bundle Size**: Only includes the utilities actually used
+
+### 📄 Markdown for Content
+
+Content is stored in markdown files rather than a database or CMS:
+
+- **🔍 Simplicity**: No database setup or management required
+- **📜 Version Control**: Content changes can be tracked in Git
+- **👨‍💻 Developer-Friendly**: Easy to edit and preview locally
+- **🧳 Portable**: Content can be easily migrated to other systems
+
+## 📂 Project Structure
+
+```
+personal-site/
+├── app/                  # Next.js App Router pages
+│   ├── about/            # About page
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout component
+│   └── page.tsx          # Home page
+├── components/           # Reusable React components
+│   ├── header.tsx        # Site header with navigation
+│   └── markdown-content.tsx # Markdown rendering component
+├── content/              # Markdown content files
+│   ├── about.md          # About page content
+│   └── home.md           # Home page content
+├── lib/                  # Utility functions
+│   └── mdx.ts            # Markdown processing utilities
+├── public/               # Static assets
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── postcss.config.js     # PostCSS configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💭 Design Philosophy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The design follows a minimalist approach inspired by anthonycole.fyi:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **📝 Content-First**: Typography and spacing prioritize readability
+- **🧘‍♂️ Minimal Styling**: Limited color palette and visual elements
+- **📱 Responsive Design**: Works seamlessly on all device sizes
+- **♿ Accessibility**: High contrast text and semantic HTML
 
-## Learn More
+## ⚡ Performance Considerations
 
-To learn more about Next.js, take a look at the following resources:
+This architecture was chosen with performance in mind:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **🏗️ Static Generation**: Pages are pre-rendered at build time
+- **🪶 Minimal JavaScript**: Limited client-side JS for faster loading
+- **✂️ CSS Optimization**: Tailwind automatically removes unused styles
+- **🖼️ Image Optimization**: Next.js handles image optimization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+### 📋 Prerequisites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js 23.0 or later
+- [nvm](https://github.com/nvm-sh/nvm)
+- [pnpm](https://pnpm.io/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 💻 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anthonycole/anthonycole.fyi.git
+   cd anthonycole.fyi
+
+2. Run `pnpm i`
+
+### 💻 Local Setup
+
+1. Run `pnpm dev`
