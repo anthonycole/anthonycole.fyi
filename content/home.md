@@ -1,5 +1,5 @@
 
-## Hey there, I'm an experienced Frontend Technical Lead and Senior Engineer
+## I'm an experienced Frontend Technical Lead and Senior Engineer
 
 I have a proven track record of leading and spearheading frontend initiatives as part of broader digital transformation strategies across both enterprises and startups.
 
