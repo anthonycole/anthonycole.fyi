@@ -1,0 +1,187 @@
+import { Box, Heading, Text, VStack, HStack, Badge } from "@chakra-ui/react"
+
+export const skills = {
+  "Leadership & Strategy": [
+    "Strategy",
+    "Technical Leadership",
+    "Code Review",
+    "Agile",
+    "Kanban",
+    "Scrum",
+    "Stakeholder Management"
+ ],
+ "AI/Artificial Intelligence": [
+    "ChatGPT",
+    "GitHub Copilot",
+    "Claude Code",
+    "Anthropic API",
+    "Prompt Engineering"
+  ],
+  "Architecture": [
+    "Headless",
+    "MACH",
+    "Webhooks",
+    "Microservices",
+    "Monolitic Architecture",
+    "Microfrontends",
+    "N-Tier",
+    "Monorepo",
+    "Nx",
+    "OAuth",
+  ],
+  "Frontend": [
+    "React",
+    "Tailwind",
+    "Mantine",
+    "TypeScript",
+    "Next.js",
+    "Server Side Rendering",
+    "Gatsby",
+    "Redux",
+    "Design Systems",
+    "Storybook",
+    "CSS Grid",
+    "Flexbox"
+  ],
+  "Backend": [
+    "Node.js",
+    "GraphQL",
+    "Apollo",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+  ],
+   "Testing & QA": [
+      "Jest",
+      "Playwright",
+      "Cypress"
+   ],
+  "Third Party Services": [
+   "HubSpot",
+   "Auth0",
+   "WorkOS",
+   "Customer.io",
+   "Twiilo",
+   "Contentful",
+   "Inngest",
+  ],
+  "DevOps & Cloud": [
+    "AWS",
+    "GCP",
+    "Azure",
+    "Docker",
+    "Vercel",
+    "Netlify",
+    "CI/CD",
+    "GitHub Actions",
+    "DataDog",
+    "CloudFront",
+    "Renovate",
+    "SonarQube",
+  ]
+}
+
+export const accreditation = [
+   {
+      title: "Certified Cloud Practitioner",
+      institution: "Amazon Web Services",
+      year: "In Progress"
+   },
+   {
+      title: "Certified Community Director",
+      institution: "Institute of Community Directors",
+      year: "In Progress"
+   },
+   {
+      title: "Psychological First Aid (PFA)",
+      institution: "St John Ambulance",
+      year: "2023"
+   },
+   {
+      title: "Advanced Communication",
+      institution: "Australian Institute of Management",
+      year: "2023"
+   },
+   {
+      title: "Dealing with Difficult Behaviours",
+      institution: "Australian Institute of Management",
+      year: "2023"
+   },
+   {
+      title: "Digital Leadership Elevate",
+      institution: "Academy Xi",
+      year: "2022"
+   },
+   {
+      title: "Product Manament",
+      institution: "General Assembly",
+      year: "2015"
+   },
+]
+
+<Box as="section" aria-labelledby="skills-heading">
+  <Heading as="h2" id="skills-heading" size="lg" fontWeight="500" mb={6}>
+    Skills
+  </Heading>
+  
+  <VStack spacing={6} align="stretch">
+    {Object.entries(skills).map(([category, items]) => (
+      <Box key={category} as="article" aria-labelledby={`${category.toLowerCase().replace(/[^a-z0-9]/g, '-')}-heading`}>
+        <Heading 
+          as="h3" 
+          id={`${category.toLowerCase().replace(/[^a-z0-9]/g, '-')}-heading`}
+          fontSize="sm" 
+          fontWeight="600" 
+          textTransform="uppercase" 
+          letterSpacing="wide" 
+          mb={3}
+          color="gray.600"
+          _dark={{ color: "white" }}
+        >
+          {category}
+        </Heading>
+        
+        <Box as="div" role="list" aria-label={`${category} skills`}>
+          <HStack spacing={2} flexWrap="wrap">
+            {items.map((skill) => (
+              <Badge 
+                key={skill}
+                role="listitem"
+                variant="subtle" 
+                colorScheme="blue"
+                fontSize="xs"
+                px={2}
+                py={1}
+                borderRadius="md"
+              >
+                {skill}
+              </Badge>
+            ))}
+          </HStack>
+        </Box>
+      </Box>
+    ))}
+  </VStack>
+</Box>
+
+<Box as="section" aria-labelledby="education-heading" mt={8}>
+  <Heading as="h2" id="education-heading" size="lg" fontWeight="500" mb={6}>
+    Education & Certifications
+  </Heading>
+  
+  <VStack spacing={4} align="stretch">
+    {accreditation.map((item) => (
+      <Box 
+        key={item.title} 
+        as="article" 
+      >
+        <Heading as="h3" fontSize="md" fontWeight="600" mb={1}>
+          {item.title}
+        </Heading>
+        <Text fontSize="sm" color="subtle-text">
+          {item.institution} • {item.year || item.time}
+        </Text>
+      </Box>
+    ))}
+  </VStack>
+</Box>
